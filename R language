@@ -26,6 +26,7 @@ read.xlsx("new excel file.xlsx", sheet = 1)
 read.xlsx("new excel file.xlsx", sheet = 2)
 read.xlsx("new excel file.xlsx", sheet = "mtcars")
 
+
 import.mtcars <- read.xlsx("new excel file.xlsx", rowNames = TRUE, sheet = "mtcars")
 import.mtcars
 
