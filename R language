@@ -1,0 +1,33 @@
+setwd("D:/HDrive/Courses/R for Economics/2 Data/DataSets")
+
+data(mtcars)
+head(mtcars)
+
+data(warpbreaks)
+head(warpbreaks)
+
+write.xlsx(mtcars, "new excel file.xlsx")
+
+write.xlsx(mtcars, "new excel file.xlsx", sheetName = "mtcars")
+write.xlsx(warpbreaks, "new excel file.xlsx", sheetName = "warpbreaks")
+
+
+# Multiple worksheets
+wb <- createWorkbook("new excel file.xlsx")
+addWorksheet(wb, "mtcars")
+addWorksheet(wb, "warpbreaks")
+writeData(wb, sheet = "mtcars", rowNames = TRUE, mtcars)
+writeData(wb, sheet = "warpbreaks", warpbreaks)
+saveWorkbook(wb, "new excel file.xlsx", overwrite = TRUE)
+
+
+read.xlsx("new excel file.xlsx")
+read.xlsx("new excel file.xlsx", sheet = 1)
+read.xlsx("new excel file.xlsx", sheet = 2)
+read.xlsx("new excel file.xlsx", sheet = "mtcars")
+
+import.mtcars <- read.xlsx("new excel file.xlsx", rowNames = TRUE, sheet = "mtcars")
+import.mtcars
+
+import.warpbreaks <- read.xlsx("new excel file.xlsx", sheet = "warpbreaks")
+import.warpbreaks
