@@ -1,0 +1,26 @@
+setwd("D:\\Hdrive\\Courses\\R for Economics\\2 Data\\DataSets")
+getwd()
+
+url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/msleep_ggplot2.csv"
+filename <- "msleep_ggplot2.csv"
+if (!file.exists(filename)) download(url,filename)
+
+msleep <- read.csv("msleep_ggplot2.csv")
+head(msleep)
+
+# COLUMN NAME	    DESCRIPTION
+# name	          common name
+# genus	          taxonomic rank
+# vore	          carnivore, omnivore or herbivore?
+# order	          taxonomic rank
+# conservation	  the conservation status of the mammal
+# sleep_total	    total amount of sleep, in hours
+# sleep_rem	      rem sleep, in hours
+# sleep_cycle	    length of sleep cycle, in hours
+# awake	          amount of time spent awake, in hours
+# brainwt	        brain weight in kilograms
+# bodywt	        body weight in kilograms
+
+
+# this code can also work but sometimes it may result in an error 
+download.file(url = url, destfile = "msleep_ggplot2.csv")
